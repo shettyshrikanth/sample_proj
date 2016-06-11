@@ -31,12 +31,12 @@ class ShopTest extends Specification {
 
   "Checkout system which takes a list of items scanned at the till and outputs the total cost" should {
 
-    "3 Apples and 1 Orange cost \\£2.05  " in {
-      Shop.checkout(Apple, Apple, Apple, Orange) mustEqual 2.05
+    "3 Apples and 1 Orange cost Sterling 2.05  " in {
+      Shop.checkout(ShoppingCart(Apple, Apple, Apple, Orange)) mustEqual 2.05
     }
     
     " Empty shopping cart cost 0.00 " in {
-      Shop.checkout() mustEqual 0.0       
+      Shop.checkout(ShoppingCart()) mustEqual 0.0       
     }
   }
 }
